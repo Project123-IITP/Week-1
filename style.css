@@ -365,3 +365,24 @@ body.light-theme .home-hero::after{display:none!important;}
 }
 
 
+.footer-logo{
+
+display:flex;
+
+align-items:center;
+
+}
+
+.footer-main-logo{
+
+width:100px;
+
+height:auto;
+
+object-fit:contain;
+
+display:block;
+
+}
+
+
