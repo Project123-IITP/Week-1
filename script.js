@@ -17,22 +17,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 2. MOBILE DRAWER HAMBURGER TRANSITION
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const navLinksList = document.getElementById('nav-links-list');
+  const mobileMenuBtn =
+document.getElementById("mobile-menu-btn");
 
-  mobileMenuBtn.addEventListener('click', () => {
-    navLinksList.classList.toggle('active');
-    const bars = mobileMenuBtn.querySelectorAll('.bar');
-    if (navLinksList.classList.contains('active')) {
-      bars[0].style.transform = 'rotate(-45deg) translate(-4px, 5px)';
-      bars[1].style.opacity = '0';
-      bars[2].style.transform = 'rotate(45deg) translate(-4px, -5px)';
-    } else {
-      bars[0].style.transform = 'none';
-      bars[1].style.opacity = '1';
-      bars[2].style.transform = 'none';
-    }
-  });
+const navLinksList =
+document.getElementById("nav-links-list");
+
+mobileMenuBtn.addEventListener("click",()=>{
+
+mobileMenuBtn.classList.toggle("open");
+
+navLinksList.classList.toggle("active");
+
+});
+
+document
+.querySelectorAll(".nav-item")
+.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+navLinksList.classList.remove("active");
+
+mobileMenuBtn.classList.remove("open");
+
+});
+
+});
 
   // Close drawer on click target
   document.querySelectorAll('.nav-item').forEach(item => {
